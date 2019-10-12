@@ -5,12 +5,27 @@
 
 }
 
+body {
+    background-color: rgb(187, 187, 187);
+}
+
 #main {
     width: 1000px;
     margin: 0 auto;
 }
 
 #header {
-    height: 100px;
-    
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: rgb(125, 180, 61);
+}
+
+#content{
+    height: 700px; /* tymczasowe */
+    margin-bottom: 10px;
+}
+
+#footer {
+    height: 80px;
+
 }
