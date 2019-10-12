@@ -1,0 +1,16 @@
+*{
+    border: 1px red dashed;
+    margin: 0;
+    padding: 0;
+
+}
+
+#main {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#header {
+    height: 100px;
+    
+}
