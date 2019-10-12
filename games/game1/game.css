@@ -17,7 +17,7 @@ img {
 
       /* img{pointer-events: none;} */
 
-      
+
 body
 {
     background: green;
@@ -42,7 +42,7 @@ body
 {
     position: absolute;
      top:20px; 
-    background-color: red;
+    background-color: blue;
     /* background: url( ); */
     width: 800px;
     height: 600px;
