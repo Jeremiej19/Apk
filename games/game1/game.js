@@ -6,7 +6,7 @@ var height = 600;
 
 var img_size = 132;
 var spawn_delay = 1000;
-var object_animation_duration = 6000;
+var object_animation_duration = 600;
 
 var lives = 10;
 
@@ -35,14 +35,14 @@ function spawn_enemy( i )
 
      function(){
         // console.log(this.parentElement);
-         if( this.parentElement == null)
+         if( this.parentElement != null)
          {
-             return;
-         }
-        delete_obj(this);
+            delete_obj(this);
 
-        $("#lives").html("${--lives}");
-        console.log(lives);
+            $("#lives").html(--lives);
+            console.log(lives);
+         }
+
         
     
     }); `);
