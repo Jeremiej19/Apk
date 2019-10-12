@@ -2,11 +2,11 @@ var scoreboard_height = 20;
 
 var width = 800;
 var height = 600;
-
+var spawn;
 
 var img_size = 132;
 var spawn_delay = 1000;
-var object_animation_duration = 600;
+var object_animation_duration = 3000;
 
 var lives = 10;
 
@@ -38,6 +38,11 @@ function spawn_enemy( i )
          if( this.parentElement != null)
          {
             delete_obj(this);
+            if( lives == 0 )
+            {
+                clearInterval( spawn );
+                $('#board').html("Koniec gry");
+            }
 
             $("#lives").html(--lives);
             console.log(lives);
@@ -69,7 +74,7 @@ $(document).ready(function(){
     $("#board").css("width" , width + "px");
     $("#board").css("height" , height + "px");
 
-    var spawn = setInterval( "spawn_enemy();" , spawn_delay );
+    spawn = setInterval( "spawn_enemy();" , spawn_delay );
     
     $("#board").click(function(){
  //       console.log("board");
