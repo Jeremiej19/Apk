@@ -9,6 +9,7 @@ var spawn_delay = 1000;
 var object_animation_duration = 3000;
 
 var lives = 10;
+var score = 0;
 
 
 var objects = [];
@@ -26,6 +27,7 @@ function spawn_enemy( i )
     var obj = document.createElement("img");
     obj.style = `z-index:10; position: absolute; left: ${where}px; top:${scoreboard_height}px;`;
     obj.src = "./butelka.png";
+    obj.draggable - false;
 
 //animacja
     obj.setAttribute("onload",`$(this).animate({
@@ -38,14 +40,17 @@ function spawn_enemy( i )
          if( this.parentElement != null)
          {
             delete_obj(this);
+            
+            $("#lives").html(--lives);
+            console.log(lives);
+
             if( lives == 0 )
             {
                 clearInterval( spawn );
-                $('#board').html("Koniec gry");
+              
+                $('#board').html('<p> Koniec gry </p>');
             }
 
-            $("#lives").html(--lives);
-            console.log(lives);
          }
 
         
@@ -57,7 +62,9 @@ function spawn_enemy( i )
     obj.onclick = function () {
  //       console.log("enemy");
        // this.parentElement.removeChild(this);
+
        delete_obj(this);
+       $("#score").html(++score);
     };
 
     obj.className = "trash";

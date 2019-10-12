@@ -2,6 +2,20 @@
     margin: 0;
     padding: 0;
 }
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    }
+    img {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        
+      }
 body
 {
     background: green;
@@ -12,6 +26,13 @@ body
     /* background: url( ); */
     width: 800px;
     height: 20px;
+    font-weight: bold;
+}
+#scoreboard p
+{
+    width: 400px;
+    float: left;
+
 }
 #board
 {
@@ -20,8 +41,15 @@ body
     /* background: url( ); */
     width: 800px;
     height: 600px;
+    
+    text-align:center;
 }
-
+#board p
+{
+    position: relative;
+    top: 40%;  
+    font-size: 600%;
+}
 .trash
 {
     position: absolute;
