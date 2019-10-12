@@ -2,11 +2,15 @@
     margin: 0;
     padding: 0;
 }
-
+body
+{
+    background: green;
+}
 #board
 {
     position: absolute;
     background-color: red;
+    /* background: url( ); */
     width: 800px;
     height: 600px;
 }
