@@ -1,5 +1,4 @@
 *{
-    border: 1px red dashed;
     margin: 0;
     padding: 0;
 
@@ -15,17 +14,25 @@ body {
 }
 
 #header {
-    height: 150px;
+    height: 110px;
     margin-bottom: 10px;
     background-color: rgb(125, 180, 61);
+}
+
+#nav {
+    background-color: rgb(102, 146, 52);
+    height: 40px;
+    position: relative;
+    top:30px;
 }
 
 #content{
     height: 700px; /* tymczasowe */
     margin-bottom: 10px;
+    background-color: rgb(219, 219, 219);
 }
 
 #footer {
     height: 80px;
-
+    background-color: rgb(64, 80, 45);
 }
