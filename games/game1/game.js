@@ -25,13 +25,14 @@ function spawn_enemy( i )
     var where =  parseInt( Math.random() * ( width - img_size ) );
 //    console.log(where);
     var obj = document.createElement("img");
-    obj.style = `z-index:10; position: absolute; left: ${where}px; top:${scoreboard_height}px;`;
+  //  obj.style = `z-index:10; position: absolute; left: ${where}px; top:${scoreboard_height}px;`;
+    obj.style = `z-index:10; position: absolute; left: ${where}px; top: -50px;`;
     obj.src = "./butelka.png";
     obj.draggable - false;
-
+    obj.setAttribute("ondragstart","return false;");
 //animacja
     obj.setAttribute("onload",`$(this).animate({
-        top: ${ scoreboard_height + height - parseInt(img_size/2)} + 'px'
+        top: ${ height } + 'px'
     }, ${object_animation_duration},
      'linear' ,
 

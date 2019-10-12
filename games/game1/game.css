@@ -8,25 +8,29 @@ img {
     -moz-user-select: none;
     -o-user-select: none;
     user-select: none;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
     }
-    img {
-        -webkit-user-drag: none;
-        -khtml-user-drag: none;
-        -moz-user-drag: none;
-        -o-user-drag: none;
-        
-      }
+
+      /* img{pointer-events: none;} */
+
+      
 body
 {
     background: green;
 }
 #scoreboard
 {
+    position: absolute;
     background-color: yellow;
     /* background: url( ); */
     width: 800px;
     height: 20px;
     font-weight: bold;
+    z-index: 100;
 }
 #scoreboard p
 {
@@ -36,7 +40,8 @@ body
 }
 #board
 {
-    /* position: absolute; */
+    position: absolute;
+     top:20px; 
     background-color: red;
     /* background: url( ); */
     width: 800px;
