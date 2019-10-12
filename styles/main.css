@@ -62,7 +62,7 @@ body {
 
 
 #content{
-    height: 700px; /* tymczasowe */
+    min-height: 600px; /* tymczasowe */
     margin-bottom: 10px;
     background-color: #d8d8d8;
     padding:15px;
@@ -72,6 +72,31 @@ iframe {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.author {
+    display: block;
+    width: 485px;
+    float: left;
+}
+
+.author table {
+    width: 100%;
+}
+
+.author_photo {
+    width: 200px;
+    height: 200px;
+    background-color: #5a6b52;
+    border-radius: 5px;
+}
+
+.author .cell {
+    width: 220px;
+    background-color: #c1caba;
+    border-radius: 5px;
+    height: 45px;
+    padding-left: 10px ;
 }
 
 
