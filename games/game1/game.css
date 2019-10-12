@@ -6,9 +6,16 @@ body
 {
     background: green;
 }
+#scoreboard
+{
+    background-color: yellow;
+    /* background: url( ); */
+    width: 800px;
+    height: 20px;
+}
 #board
 {
-    position: absolute;
+    /* position: absolute; */
     background-color: red;
     /* background: url( ); */
     width: 800px;
@@ -18,7 +25,7 @@ body
 .trash
 {
     position: absolute;
-    left: 10px;;
-    width:  25px;
-    height: 30px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
 }
