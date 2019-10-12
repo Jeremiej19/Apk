@@ -57,7 +57,7 @@ body {
     color:#dfffd3
 }
 
-
+/* konec menu*/
 
 
 
@@ -65,7 +65,15 @@ body {
     height: 700px; /* tymczasowe */
     margin-bottom: 10px;
     background-color: #d8d8d8;
+    padding:15px;
 }
+
+iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 #footer {
     height: 80px;
