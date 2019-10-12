@@ -10,3 +10,11 @@
     width: 800px;
     height: 600px;
 }
+
+.trash
+{
+    position: absolute;
+    left: 10px;;
+    width:  25px;
+    height: 30px;
+}
