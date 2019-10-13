@@ -22,7 +22,7 @@ function spawn_enemy( )
 //    console.log(where);
 
     var obj = document.createElement("img");
-    obj.style = `z-index:10; position: absolute; left: 0px; top: ${parseInt(height/2)-img_size}px; width:${img_size}px; height:${img_size}px;`;
+    obj.style = `z-index:10; position: absolute; left: ${ -img_size }px; top: ${parseInt(height/2)-img_size}px; width:${img_size}px; height:${img_size}px;`;
     obj.src = "./butelka.png";
     obj.className = "trash";    
 
@@ -33,16 +33,17 @@ function spawn_enemy( )
         setTimeout(() => (this.className = 'invisible'), 0);
       //  console.log(event.currentTarget);
     };
-    obj.ondragend = function()
+    obj.ondragend = function(e)
     {
         this.className = 'trash';
-     //   console.log(event.currentTarget);
+        console.log(e.clientX);
+        console.log(e.clientY);
     };
 
-     obj.ondrag = function () {
-
+     obj.ondrop = function (e) {
+        e.preventDefault();
     // //   delete_obj(this);
-    // //   $("#score").html(++score);
+       $("#score").html(++score);
      };
 
 
@@ -91,7 +92,7 @@ $(document).ready(function(){
     $("#lives").html(lives);
 
     spawn = setInterval( "spawn_enemy();" , spawn_delay );
-    
+
 
   
   });
