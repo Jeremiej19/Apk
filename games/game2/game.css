@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background: green;
+}
+#scoreboard
+{
+    position: absolute;
+    background-color: yellow;
+    /* background: url( ); */
+    width: 800px;
+    height: 20px;
+    font-weight: bold;
+    z-index: 100;
+}
+#scoreboard p
+{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+#board
+{
+    position: absolute;
+     top:20px; 
+    background-color: blue;
+    /* background: url( ); */
+    width: 800px;
+    height: 600px;
+    
+    text-align:center;
+}
+#board div
+{
+    width: 33.3%;
+    height: 150px;
+}
+#board p
+{
+    position: relative;
+    top: 40%;  
+    font-size: 600%;
+}
+.trash
+{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    
+    /* img flip
+    transform: scaleX(-1); */
+}
+.invisible
+{
+    display: none;
+}
