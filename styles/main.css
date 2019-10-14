@@ -8,6 +8,18 @@ body {
     background-color: #bbbbbb;
 }
 
+a:link {
+    color: #7cb823;
+}
+
+a:visited {
+    color: #517717;
+}
+
+a:active {
+    color: #517717;
+}
+
 #main {
     width: 1000px;
     margin: 0 auto;
@@ -68,13 +80,17 @@ body {
     padding:15px;
 }
 
+/* gierki-iframy */
+
 iframe {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
-.author {
+/* o nas */
+
+div.author {
     display: block;
     width: 485px;
     float: left;
@@ -99,6 +115,46 @@ iframe {
     padding-left: 10px ;
 }
 
+/* lista gier */
+
+.list {
+    height: 200px;
+    width: 100%-20px;
+    background-color: #b6d3b6;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+.miniature {
+    height: 80%;
+    width: 250px;
+    background-color: rgb(138, 138, 138);
+    float: left;
+    margin-top: 10px;
+    border-top: 1px gray solid;
+    border-left: 1px gray solid;
+    border-bottom: 1px gray solid;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.info {
+    background-color: #b6d3b6;;
+    height: 80%;
+    width: 100%-20px;
+    padding-inline-start: 250px;
+    margin-top: 10px;
+    border-top: 1px gray solid;
+    border-right: 1px gray solid;
+    border-bottom: 1px gray solid;
+    border-radius: 10px;
+}
+.info * {
+    margin: 10px;
+    color: black;
+}
+
 
 #footer {
     height: 80px;
@@ -108,8 +164,12 @@ iframe {
 }
 
 
-
+/* dodatkowe klasy */
 
 .center {
     text-align: center;
+}
+
+.no_decoration {
+    text-decoration: none;
 }
