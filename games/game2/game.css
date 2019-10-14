@@ -33,7 +33,7 @@ body
     
     text-align:center;
 }
-#board div
+#board .bin
 {
     width: 33.3%;
     height: 150px;
@@ -53,7 +53,11 @@ body
     /* img flip
     transform: scaleX(-1); */
 }
-.invisible
-{
-    display: none;
-}
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+
+    }

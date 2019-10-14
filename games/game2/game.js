@@ -5,11 +5,14 @@ var height = 600;
 var spawn;
 
 var img_size = 60;
-var spawn_delay = 1000;
+var spawn_delay = 2000;
 var object_animation_duration = 6000;
 
 var lives = 5;
 var score = 0;
+
+var draged_item = null;
+
 
 
 function delete_obj( obj )
@@ -24,27 +27,27 @@ function spawn_enemy( )
     var obj = document.createElement("img");
     obj.style = `z-index:10; position: absolute; left: ${ -img_size }px; top: ${parseInt(height/2)-img_size}px; width:${img_size}px; height:${img_size}px;`;
     obj.src = "./butelka.png";
-    obj.className = "trash";    
+    obj.className = "1";
+    obj.className += " trash";    
+   
 
     obj.draggable - true;
 
     obj.ondragstart = function()
     {
-        setTimeout(() => (this.className = 'invisible'), 0);
+        draged_item = this;
+        setTimeout(() => (this.style.display = 'none'), 0);
       //  console.log(event.currentTarget);
     };
-    obj.ondragend = function(e)
+    obj.ondragend = function()
     {
-        this.className = 'trash';
-        console.log(e.clientX);
-        console.log(e.clientY);
-    };
+        if( draged_item != null )
+        {
+            draged_item.style.display = 'block';
+            draged_item = null;
+        }
 
-     obj.ondrop = function (e) {
-        e.preventDefault();
-    // //   delete_obj(this);
-       $("#score").html(++score);
-     };
+    };
 
 
     ///animacja
@@ -91,8 +94,30 @@ $(document).ready(function(){
     $("#scoreboard").css("width" , width + "px");
     $("#lives").html(lives);
 
+    spawn_enemy( );
     spawn = setInterval( "spawn_enemy();" , spawn_delay );
 
-
+    let bins = document.querySelectorAll('.bin');
+    
+    for( var i = 0 ; i < bins.length ; i++ )
+    {
+        var bin = bins[i];
+        bin.addEventListener('dragover', e => {
+            e.preventDefault();
+        });
+        bin.addEventListener('dragenter', e => {
+            e.preventDefault();
+        });
+        bin.addEventListener('drop', function() {
+            console.log(draged_item.className);
+            console.log(this.id);
+            if( this.id == draged_item.className[0] )
+                {
+                    $("#score").html(++score);
+                    delete_obj(draged_item);
+                    draged_item = null;
+                }
+        });
+    }
   
   });
