@@ -14,7 +14,7 @@ p {
 }
 
 body {
-    background-color: #bbbbbb;
+    background-image: ;
 }
 
 
@@ -48,8 +48,6 @@ a:active {
 h1.title {
     margin-left: 25px;
     padding-top: 10px;
-    -webkit-text-stroke: 1px white;
-
 }
 
 #nav {
