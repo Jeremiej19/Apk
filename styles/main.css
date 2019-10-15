@@ -14,22 +14,23 @@ p {
 }
 
 body {
-    background-image: url();
+    background-image: url(../games/data/imgs/Tlo2.png);
+    background-size: 350px;
 }
 
 
 /* kolory linków */
 
 a:link {
-    color: #7cb823;
+    color: #88d498;
 }
 
 a:visited {
-    color: #517717;
+    color: #114b5f;
 }
 
 a:active {
-    color: #517717;
+    color: #114b5f;
 }
 
 #main {
@@ -42,7 +43,7 @@ a:active {
 #header {
     height: 110px;
     margin-bottom: 10px;
-    background-color: #7db43d;
+    background-color: #1a936f;
 }
 
 h1.title {
@@ -51,7 +52,7 @@ h1.title {
 }
 
 #nav {
-    background-color: #669234;
+    background-color: #114b5f;
     height: 40px;
     position: relative;
     top: 25px;
@@ -71,12 +72,12 @@ h1.title {
     width: 20%;    
     float: left;
     padding: 9px 0;  
-    border-bottom: #adff2f 3px solid;  
+    border-bottom: #88d498 3px solid;  
 }
 
 #menu li:hover {
-    background-color: #4c6d26;
-    border-bottom-color: #80ff2b;
+    background-color: #1a7796;
+    border-bottom-color: #4ca05e;
 }
 
 #menu a {
@@ -139,14 +140,14 @@ div.author {
 .list {
     height: 200px;
     width: 100%-20px;
-    background-color: #b6d3b6;
+    background-color: #bfdad1;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 25px;
 }
 
 .list:hover, .list:hover .info {
-    background-color: #98c598;
+    background-color: #a3dace;
 }
 
 .miniature {
@@ -163,7 +164,7 @@ div.author {
 }
 
 .info {
-    background-color: #b6d3b6;;
+    background-color: #bfdad1;;
     height: 80%;
     width: 100%-20px;
     padding-inline-start: 250px;
@@ -181,7 +182,7 @@ div.author {
 
 #footer {
     height: 80px;
-    background-color: #40502d;
+    background-color: #1b333b;
     padding: 5px;
     color: whitesmoke;
 }
