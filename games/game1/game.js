@@ -29,10 +29,11 @@ function spawn_enemy( )
     
     obj.src = trashes_list[nr].img;
     obj.className = " trash";      
-    var img_size =  trashes_list[nr].size;
+    var img_width =  trashes_list[nr].width;
+    var img_height =  trashes_list[nr].height;
     
-    var where =  parseInt( Math.random() * ( width - img_size ) );
-    obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_size}px; width:${img_size}px; height:${img_size}px;`;
+    var where =  parseInt( Math.random() * ( width - img_width ) );
+    obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_height}px; width:${img_width}px; height:${img_height}px;`;
     
     obj.draggable - false;
     obj.setAttribute("ondragstart","return false;");

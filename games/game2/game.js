@@ -34,8 +34,10 @@ function spawn_enemy( )
     obj.src = trashes_list[nr].img;
     obj.className = trashes_list[nr].bin;
     obj.className += " trash";       
-    var img_size = trashes_list[nr].size;
-    obj.style = `z-index:10; position: absolute; left: ${ -img_size }px; top: ${parseInt(height/2)-img_size}px; width:${img_size}px; height:${img_size}px;`;
+    
+    var img_width = trashes_list[nr].width;
+    var img_height= trashes_list[nr].height;
+    obj.style = `z-index:10; position: absolute; left: ${ -img_width }px; top: ${parseInt(height/2)-img_height}px; width:${img_width}px; height:${img_height}px;`;
 
     obj.draggable - true;
 
