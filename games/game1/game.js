@@ -4,7 +4,6 @@ var width = 800;
 var height = 600;
 var spawn;
 
-var img_size = 60;
 var spawn_delay = 1000;
 var object_animation_duration = 3000;
 
@@ -20,17 +19,21 @@ function delete_obj( obj )
 
 function spawn_enemy( )
 {
-    var where =  parseInt( Math.random() * ( width - img_size ) );
+
 //    console.log(where);
 
     var obj = document.createElement("img");
-    obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_size}px; width:${img_size}px; height:${img_size}px;`;
+    
     var nr =  parseInt( Math.random() * ( trashes_list.length ) );
     console.log( nr );
     
     obj.src = trashes_list[nr].img;
-    obj.className = " trash";       
-
+    obj.className = " trash";      
+    var img_size =  trashes_list[nr].size;
+    
+    var where =  parseInt( Math.random() * ( width - img_size ) );
+    obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_size}px; width:${img_size}px; height:${img_size}px;`;
+    
     obj.draggable - false;
     obj.setAttribute("ondragstart","return false;");
 
