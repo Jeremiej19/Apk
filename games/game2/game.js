@@ -123,6 +123,7 @@ $(document).ready(function(){
                 }
             else
             {
+                mySound.play();
                 $("#lives").html(--lives);
                 if( lives == 0 )
                 {
