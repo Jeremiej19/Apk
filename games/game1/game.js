@@ -25,7 +25,12 @@ function spawn_enemy( )
 
     var obj = document.createElement("img");
     obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_size}px; width:${img_size}px; height:${img_size}px;`;
-    obj.src = "./butelka.png";
+    var nr =  parseInt( Math.random() * ( trashes_list.length ) );
+    console.log( nr );
+    
+    obj.src = trashes_list[nr].img;
+    obj.className = " trash";       
+
     obj.draggable - false;
     obj.setAttribute("ondragstart","return false;");
 
@@ -69,7 +74,6 @@ function spawn_enemy( )
        $("#score").html(++score);
     };
 
-    obj.className = "trash";
     
     $("#board").append( obj );
     

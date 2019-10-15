@@ -4,7 +4,6 @@ var width = 800;
 var height = 600;
 var spawn;
 
-var img_size = 60;
 var spawn_delay = 2000;
 var object_animation_duration = 6000;
 
@@ -12,6 +11,8 @@ var lives = 5;
 var score = 0;
 
 var draged_item = null;
+
+
 
 
 
@@ -25,11 +26,16 @@ function spawn_enemy( )
 //    console.log(where);
 
     var obj = document.createElement("img");
+
+    
+    var nr =  parseInt( Math.random() * ( trashes_list.length ) );
+    console.log( nr );
+    
+    obj.src = trashes_list[nr].img;
+    obj.className = trashes_list[nr].bin;
+    obj.className += " trash";       
+    var img_size = trashes_list[nr].size;
     obj.style = `z-index:10; position: absolute; left: ${ -img_size }px; top: ${parseInt(height/2)-img_size}px; width:${img_size}px; height:${img_size}px;`;
-    obj.src = "./butelka.png";
-    obj.className = "1";
-    obj.className += " trash";    
-   
 
     obj.draggable - true;
 
@@ -71,7 +77,7 @@ function spawn_enemy( )
             {
                 clearInterval( spawn );
               
-                $('#board').html('<p> Koniec gry </p>');
+                $('#board').html('<p onclick="window.location.reload(true);"> Koniec gry </p>');
             }
 
          }
@@ -109,14 +115,22 @@ $(document).ready(function(){
             e.preventDefault();
         });
         bin.addEventListener('drop', function() {
-            console.log(draged_item.className);
-            console.log(this.id);
             if( this.id == draged_item.className[0] )
                 {
                     $("#score").html(++score);
                     delete_obj(draged_item);
                     draged_item = null;
                 }
+            else
+            {
+                $("#lives").html(--lives);
+                if( lives == 0 )
+                {
+                clearInterval( spawn );
+              
+                $('#board').html('<p onclick="window.location.reload(true);"> Koniec gry </p>');
+                }
+            }
         });
     }
   
