@@ -36,11 +36,16 @@ a:active {
     background-color: #7db43d;
 }
 
+h1.title {
+    margin-left: 25px;
+    padding-top: 10px;
+}
+
 #nav {
     background-color: #669234;
     height: 40px;
     position: relative;
-    top: 32px;
+    top: 25px;
 }
 
 /* menu */
