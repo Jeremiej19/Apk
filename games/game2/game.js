@@ -116,7 +116,8 @@ $(document).ready(function(){
         bin.addEventListener('dragenter', e => {
             e.preventDefault();
         });
-        bin.addEventListener('drop', function() {
+        bin.addEventListener('drop', function(e) {
+            e.preventDefault();
             if( this.id == draged_item.className[0] )
                 {
                     $("#score").html(++score);
