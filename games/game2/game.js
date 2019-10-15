@@ -39,7 +39,7 @@ function spawn_enemy( )
     var img_height= trashes_list[nr].height;
     obj.style = `z-index:10; position: absolute; left: ${ -img_width }px; top: ${parseInt(height/2)-img_height}px; width:${img_width}px; height:${img_height}px;`;
 
-    obj.draggable - true;
+    obj.draggable = true;
 
     obj.ondragstart = function()
     {

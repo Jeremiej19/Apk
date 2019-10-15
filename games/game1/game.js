@@ -35,7 +35,7 @@ function spawn_enemy( )
     var where =  parseInt( Math.random() * ( width - img_width ) );
     obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_height}px; width:${img_width}px; height:${img_height}px;`;
     
-    obj.draggable - false;
+    obj.draggable = false;
     obj.setAttribute("ondragstart","return false;");
 
     ///animacja

@@ -12,7 +12,7 @@ function sound(src) {
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
-    this.sound.volume = "0.5";
+    this.sound.volume = "0.4";
     document.body.appendChild(this.sound);
     this.play = function(){
         this.sound.play();
@@ -22,4 +22,3 @@ function sound(src) {
     }    
 }
 
-var mySound = new sound("../data/sound/uh.mp3");
