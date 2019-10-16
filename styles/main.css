@@ -16,6 +16,7 @@ p {
 body {
     background-image: url(../games/data/imgs/Tlo2.png);
     background-size: 350px;
+    background-attachment: fixed;
 }
 
 
@@ -78,6 +79,7 @@ h1.title {
 #menu li:hover {
     background-color: #1a7796;
     border-bottom-color: #4ca05e;
+    border-bottom-width: 4px;
 }
 
 #menu a {
@@ -123,13 +125,13 @@ div.author {
 .author_photo {
     width: 200px;
     height: 200px;
-    background-color: #5a6b52;
+    background-color: #105f52;
     border-radius: 5px;
 }
 
 .author .cell {
     width: 220px;
-    background-color: #c1caba;
+    background-color: #a7d1ca;
     border-radius: 5px;
     height: 45px;
     padding-left: 10px ;
