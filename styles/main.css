@@ -34,6 +34,10 @@ a:active {
     color: #114b5f;
 }
 
+body {
+    background-color: rgb(187, 187, 187);
+}
+
 #main {
     width: 1000px;
     margin: 0 auto;
@@ -42,6 +46,7 @@ a:active {
 /* koniec linków */
 
 #header {
+<<<<<<< Updated upstream
     height: 110px;
     margin-bottom: 10px;
     background-color: #1a936f;
@@ -212,4 +217,19 @@ img.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+=======
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: rgb(125, 180, 61);
+}
+
+#content{
+    height: 700px; /* tymczasowe */
+    margin-bottom: 10px;
+}
+
+#footer {
+    height: 80px;
+
+>>>>>>> Stashed changes
 }
