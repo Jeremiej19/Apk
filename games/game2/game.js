@@ -23,13 +23,13 @@ function delete_obj( obj )
 
 function spawn_enemy( )
 {
-//    console.log(where);
+
 
     var obj = document.createElement("img");
 
     
     var nr =  parseInt( Math.random() * ( trashes_list.length ) );
-    console.log( nr );
+
     
     obj.src = trashes_list[nr].img;
     obj.className = trashes_list[nr].bin;
@@ -126,7 +126,7 @@ $(document).ready(function(){
                 }
             else
             {
-                new sound("../data/sound/uh.mp3").play();
+                new sound("../data/sound/wrong.mp3").play();
                 $("#lives").html(--lives);
                 if( lives == 0 )
                 {

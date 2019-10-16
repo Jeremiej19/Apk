@@ -20,12 +20,12 @@ function delete_obj( obj )
 function spawn_enemy( )
 {
 
-//    console.log(where);
+
 
     var obj = document.createElement("img");
     
     var nr =  parseInt( Math.random() * ( trashes_list.length ) );
-    console.log( nr );
+ 
     
     obj.src = trashes_list[nr].img;
     obj.className = " trash";      
