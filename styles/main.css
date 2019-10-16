@@ -114,8 +114,7 @@ iframe {
 
 div.author {
     display: block;
-    width: 485px;
-    float: left;
+    width: 970px;
 }
 
 .author table {
@@ -130,7 +129,7 @@ div.author {
 }
 
 .author .cell {
-    width: 220px;
+    width: 770px;
     background-color: #a7d1ca;
     border-radius: 5px;
     height: 45px;
