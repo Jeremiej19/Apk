@@ -13,6 +13,7 @@ function sound(src) {
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
     this.sound.volume = "0.4";
+    this.sound.setAttribute('onended','delete_obj(this);');
     document.body.appendChild(this.sound);
     this.play = function(){
         this.sound.play();
