@@ -41,7 +41,8 @@ body
 {
     position: absolute;
      top:20px; 
-    background-color: blue;
+    /* background-color: blue; */
+    background: url('../data/imgs/Tlo1.gif' );
     width: 800px;
     height: 600px;
     
