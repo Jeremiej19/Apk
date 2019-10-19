@@ -31,13 +31,9 @@ session_start();
        
 
         <div id="content">
-        <!--
-          <form action="" method="post">
-          <button type='submit' name="hello" value="tak">asdasdas</button>
-          </form>-->
               <?php
               
-
+              //tu jest funkcja do wywoływania formularza
               function quiz($tabela, $rand){
                 $test = $tabela[$rand];
                 echo "<form action='' method='post'><br><p>$test[0]</p><br>";
@@ -46,38 +42,26 @@ session_start();
                 "<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br>".
                 "<input type='submit' value='dajesz' name='poszlo'>";
                 
-                 /* if (!isset($_POST['pytanie']))
-                  { 
-                    echo "";
-                  }
-                  else{
-                    $value = $_POST['pytanie'];
-                   if ($test[4]==$value)
-                   {
-                    echo "super";
-                   }
-                   else{
-                     echo "zle to ma byc ";
-                   }
-                  }*/
-    
                 
 
               }
 
 
-              
+              //pytania do qiuzu w notacji pytanie,opd1,odp2,dop3,poprwawnaodp
               $tabela=array(array("jeramiasz ma 12 lat?", "nie", "tak", "może", "1"),
               array("bartek to dzieciaczek bo nie ma 18?", "nie", "tak", "może", "2"),
               array("paweł ma prawojadzy?", "nie", "tak", "może", "2"),
               array("zdążymy na 25?", "nie", "tak", "może", "3"),
               array("czy ci sie odobało?", "nie", "tak", "może", "2"));
+
               if (!isset($_SESSION['i']) and !isset($_POST['start']))
               {
+                //tu jest poczatek
                 echo "tu bedzie napisane zasady i wgl ze jest fajnie i jak nacisniesz start to magia bedzie<br>";
                 echo "<form action='' method='post'><br><button type='submit' name='start' value='tak'>start</button><br></form><br>";
               }
               else{
+                //tu nic nie zmieniaj
                 if(!isset($_POST['next']) and !isset($_POST['pytanie'])and !isset($_POST['poszlo'])){
                   $_SESSION['j']=0;$_SESSION['i'] = 0; $_SESSION['points'] = 0;
                   
@@ -85,10 +69,11 @@ session_start();
                 if($_SESSION['i'] < 4 and $_SESSION['j'] < 5)
                 {
                   if (isset($_POST['hello'] )or isset($_POST['next']) or !isset($_POST['pytanie'])){
+                    //--------------------------------TU QUIZ ODPALANY----------------------
                   quiz($tabela, $_SESSION["i"]);
                   }
                   elseif(isset($_POST['pytanie']))
-                  {
+                  {//sprawdzanie odp
                     $_SESSION["i"]+=1;
                     if ($tabela[$_SESSION['j']][4]==$_POST['pytanie'])
                     {
@@ -98,6 +83,7 @@ session_start();
                     else{
                       echo "zle, prawidłowa odp to";
                     }
+                    //pojawienie buttona next
                     echo "<form action='' method='post'>";
                     echo "<button type='submit' name='next' value='tak'>next</button>";
                     echo "</form>";
@@ -105,6 +91,7 @@ session_start();
                     }
                     
                 }else{
+                  //koniec 
                   $punkty = $_SESSION['points'];
                   echo "Punkty: $punkty<br>";
                   unset($_SESSION['points']);
