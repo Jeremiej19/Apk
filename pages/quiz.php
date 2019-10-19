@@ -31,6 +31,7 @@ session_start();
        
 
         <div id="content">
+
               <?php
               
               //tu jest funkcja do wywoływania formularza
@@ -42,7 +43,6 @@ session_start();
                 "<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br>".
                 "<input type='submit' value='dajesz' name='poszlo'>";
                 
-                
 
               }
 
@@ -53,10 +53,9 @@ session_start();
               array("paweł ma prawojadzy?", "nie", "tak", "może", "2"),
               array("zdążymy na 25?", "nie", "tak", "może", "3"),
               array("czy ci sie odobało?", "nie", "tak", "może", "2"));
-
               if (!isset($_SESSION['i']) and !isset($_POST['start']))
               {
-                //tu jest poczatek
+                 //tu jest poczatek
                 echo "tu bedzie napisane zasady i wgl ze jest fajnie i jak nacisniesz start to magia bedzie<br>";
                 echo "<form action='' method='post'><br><button type='submit' name='start' value='tak'>start</button><br></form><br>";
               }
@@ -64,18 +63,26 @@ session_start();
                 //tu nic nie zmieniaj
                 if(!isset($_POST['next']) and !isset($_POST['pytanie'])and !isset($_POST['poszlo'])){
                   $_SESSION['j']=0;$_SESSION['i'] = 0; $_SESSION['points'] = 0;
+                  $arr=array();
+                  $_SESSION['last'] = $arr;
                   
                 } 
                 if($_SESSION['i'] < 4 and $_SESSION['j'] < 5)
                 {
                   if (isset($_POST['hello'] )or isset($_POST['next']) or !isset($_POST['pytanie'])){
                     //--------------------------------TU QUIZ ODPALANY----------------------
-                  quiz($tabela, $_SESSION["i"]);
+                  do{
+                    $test = rand(1,4);
+                  }while(in_array($test, $_SESSION['last']));
+                  quiz($tabela, $test);
+                  array_push($_SESSION['last'], $test);
                   }
                   elseif(isset($_POST['pytanie']))
                   {//sprawdzanie odp
                     $_SESSION["i"]+=1;
-                    if ($tabela[$_SESSION['j']][4]==$_POST['pytanie'])
+                    $actual = $_SESSION['last'];
+                    $jay = $_SESSION['j'];
+                    if ($tabela[$actual[$jay]][4]==$_POST['pytanie'])
                     {
                       echo "super";
                       $_SESSION['points'] += 1;
