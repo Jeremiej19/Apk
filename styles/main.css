@@ -173,6 +173,11 @@ div.osoba img {
     margin-bottom: 25px;
 }
 
+.list h2
+{
+    margin: 0;
+}
+
 .list:hover, .list:hover .info {
     background-color: #a3dace;
 }
@@ -209,6 +214,7 @@ div.osoba img {
 /* dodatkowe klasy */
 
 h2.title {
+    margin-top:5px;
     margin-bottom: 25px;
     width: 80%;
     margin-left: auto;
