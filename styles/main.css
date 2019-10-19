@@ -5,12 +5,13 @@
 }
 
 p {
-    font-size: 20px;
-    width: 80%;
+    font-size: 18px;
+    width: 88%;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     text-indent: 10px;
+    line-height: 25px;
 }
 
 body {
@@ -122,6 +123,17 @@ div.source p {
     width: 90%;
 }
 
+div.spis {
+    width: 80%;
+    border: 1px solid #a5bdae;
+    margin-top: 55px;
+    margin-bottom: 55px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333333;
+}
+
 /* gierki-iframy */
 
 iframe {
@@ -219,4 +231,8 @@ img.center {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+h3,h2 {
+    margin: 10px;
 }
