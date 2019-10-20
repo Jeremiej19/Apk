@@ -19,7 +19,6 @@ body {
     background-size: 350px;
     background-attachment: fixed;
 }
-/*czy jak coś teraz zrobie to zadziała */
 
 /* kolory linków */
 
@@ -105,6 +104,7 @@ h1.title {
     margin-bottom: 10px;
     background-color: #d8d8d8;
     padding:15px;
+    overflow: auto;
 }
 
 div.source {
@@ -134,10 +134,90 @@ div.spis {
     color: #333333;
 }
 
+/* kosze */
+
+div.blue {
+    border: 1px solid #2f2ffd;
+    background-color: #bebeff;
+    color: #000068;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1px;
+    padding: 5px;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    float: clear;
+}
+
+div.green {
+    border: 1px solid #008000;
+    background-color: #79db79;
+    color: #004900;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1px;    
+    padding: 5px;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    clear: left;
+}
+
+div.yellow {
+    border: 1px solid #dbdb00;
+    background-color: #ffff94;
+    color: #adad00;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1px;    
+    padding: 5px;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+}
+
+div.black {
+   border: 1px solid #000000;
+   background-color: #8b8b8b;
+   color: #242424;
+   width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 1px;    
+   padding: 5px;
+   padding-bottom: 0;
+   margin-bottom: 15px; 
+}
+
+div.good {
+    width: 70%;
+    border: 1px solid #004e00;
+    background-color: #3f963f;
+    color: #003000;
+    padding: 10px;
+    padding-left: 45px;
+    border-radius: 1px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+div.bad {
+    width: 70%;
+    border: 1px solid #4e0000;
+    background-color: #963f3f;
+    color: #300000;
+    padding: 10px;
+    padding-left: 45px;
+    border-radius: 1px; 
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
 /* gierki-iframy */
-/*div.framee{
-    
-}*/
+
 
 iframe {
     display: block;
