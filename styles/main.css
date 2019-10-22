@@ -134,6 +134,20 @@ div.spis {
     color: #333333;
 }
 
+ol.spis_main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    list-style: none;
+    font-size: 35px;
+    line-height: 50px;
+}
+
+ol.spis_main a {
+    text-decoration: none;
+}
+
 /* kosze */
 
 div.blue {
@@ -347,4 +361,8 @@ img.center {
 
 h3,h2 {
     margin: 10px;
+}
+
+hr {
+    border-top: #85c0ad 2px solid;
 }
