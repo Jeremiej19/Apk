@@ -59,7 +59,7 @@ function spawn_enemy( )
             {
                 clearInterval( spawn );
               
-                $('#board').html('<p> Koniec gry </p>');
+                $('#board').html('<p id="end"> Koniec gry </p>');
             }
 
          }
@@ -92,7 +92,19 @@ $(document).ready(function(){
     $("#scoreboard").css("width" , width + "px");
     $("#lives").html(lives);
 
-    spawn = setInterval( "spawn_enemy();" , spawn_delay );
+    $("#board").append(`
+    <div id="info">
+    
+        <h2>Informacje o grze</h2>
+        <p>Nie pozwól żeby śmieci przedostały sie do oceanu! Klikaj śmieci myszką aby je zebrać.</p> 
+        <p>Uważaj jednak aby nie złapać zwierząt!</p>
+        <button onclick="spawn = setInterval( 'spawn_enemy();' , ${spawn_delay} );   $('#info').css('display','none');   "> START </button>
+    
+    </div>
+    `);
+
+
+  //  spawn = setInterval( "spawn_enemy();" , spawn_delay );
     
 
   

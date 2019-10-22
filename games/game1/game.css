@@ -48,7 +48,7 @@ body
     
     text-align:center;
 }
-#board p
+#board #end
 {
     position: relative;
     top: 40%;  
@@ -63,3 +63,34 @@ body
     /* img flip
     transform: scaleX(-1); */
 }
+
+#info
+{
+    background-color: beige;
+    opacity: 0.9;
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: relative;
+    top: 25%;
+}
+
+
+#info h2
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#info p
+{
+    margin-bottom: 30px;
+}
+#info button
+{
+    padding: 15px;
+    background-color: white;
+    border-radius: 20%;
+    font-weight: bold;
+    font-size: 20px;
+}
+
