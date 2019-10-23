@@ -52,7 +52,15 @@ function spawn_enemy( )
          {
             delete_obj(this);
             
-            $("#lives").html(--lives);
+            if( game1_imgs[${nr}].neutral == 1 )
+            {
+                $("#score").html(++score);
+            }
+            else
+            {
+                $("#lives").html(--lives);
+               
+            }
 
             ///koniec gry
             if( lives == 0 )
@@ -75,7 +83,15 @@ function spawn_enemy( )
        // this.parentElement.removeChild(this);
 
        delete_obj(this);
-       $("#score").html(++score);
+       if( game1_imgs[nr].neutral == 1 )
+       {
+        $("#lives").html(--lives);
+       }
+       else
+       {
+           $("#score").html(++score);
+       }
+       
     };
 
     

@@ -16,6 +16,8 @@ var game1_imgs = [
     { img:'../data/imgs/Gra1_6.png', width: 111 , height: 68 },
     { img:'../data/imgs/Gra1_7.png', width: 124 , height: 72 },
     { img:'../data/imgs/Gra1_8.png', width: 180 , height: 108 },
+    { img:'../data/imgs/Gra1_9.png', width: 98 , height: 84 , neutral:1 },
+    { img:'../data/imgs/Gra1_10.png', width: 98 , height: 84, neutral:1 },
 
 ];
 function sound(src) {
