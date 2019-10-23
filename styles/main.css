@@ -366,3 +366,34 @@ h3,h2 {
 hr {
     border-top: #85c0ad 2px solid;
 }
+
+div.buttons {
+    width: 308px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.button {
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    display: block;
+    background-color: #bbbbbb;
+    border: #64d8b5 2px solid;
+    border-radius: 1px;
+    float: left;
+    margin: 10px;
+}
+
+div.button:hover {
+    background-color: #a1adaa;
+    border: #42cca3 2px solid
+}
+
+a.button {
+    text-decoration: none;
+}
