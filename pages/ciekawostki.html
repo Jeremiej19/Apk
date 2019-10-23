@@ -31,7 +31,47 @@
 
           <br><br>
 
-          <p>1. Czy wiedziałeś, że do wyprodukowania jednej tony papieru ścinane jest aż 17 drzew?</p>
+          <script>
+          
+          var ilosc_ciekawostek = 3;
+
+          var ciekawostki = [
+            "Czy wiedziałeś, że do wyprodukowania jednej tony papieru ścinane jest aż 17 drzew?",
+            "Akcja Sprzątanie świata - Polska odbywa się co roku w trzecim tygodniu września już od 1994 roku!",
+            "Ocieplenie klimatu może spowodować, że w 2050 roku tereny wokół wybrzeży Wielkiej Brytanii znajdą się pod wodą.",
+            "Statystyczny Polak wytwarza ponad 320 kg śmieci rocznie.",
+            "Około 2mln ptaków i ssaków wodnych ginie na świecie na skutek połknięcia plastikowych odpadów wrzucanych do mórz i oceanów",
+            "Jeden hektar lasu liściastego może wyprodukować około 700 kg tlenu, co stanowi dobowe zapotrzebowanie ponad 2500 ludzi.",
+            "Rzucona w lesie butelka plastikowa rozłoży się w ziemi po 500 latach, guma do żucia po 5 latach, a niedopałki papierosów po 2 latach.",
+            "Potłuczonych talerzy i kubków nie wrzucamy do pojemnika na szkło, ponieważ nie nadają się do ponownego przetworzenia. Wrzucamy je do pojemnika na odpady zmieszane.",
+            "Paragony mimo, że są z papieru nie nadają się do ponownego przetworzenia.",
+            "Czy wiedziałeś, że z plastikowych butelek można zrobić ubrania?",
+            "Wokół Ziemi krąży około 10 tysięcy satelitów, w tym wiele wycofanych z eksploatacji.",
+            "Skoszona trawa, liście i resztki jedzenia świetnie nadadzą się na kompost!",
+            "Anglicy wyliczyli, że wyrzucane w ciągu roku butelki plastikowe (PET), ustawione jedna na drugiej utworzyłyby wieżę o wysokości 28 mln km, co stanowi 73-krotną odległość Ziemi od Księżyca."
+          ]
+
+          function losuj() {
+
+            var cie = document.getElementById("ciek");
+
+            cie.innerHTML = ciekawostki[Math.round(Math.random() * ilosc_ciekawostek)];
+          }
+          
+          </script>
+
+          <div style="height: 150px; background-color: #bccfcbb2; padding: 15px;">
+            <p id="ciek" class="center"></p>
+
+            <div class="buttons" style="width: 170px;">
+             <div class="button" onclick="losuj(); return false;">Losuj</div>
+            </div>
+          </div>
+
+          <br><br><br>
+
+          <!--
+            <p>1. Czy wiedziałeś, że do wyprodukowania jednej tony papieru ścinane jest aż 17 drzew?</p>
           <p>2. Akcja Sprzątanie świata - Polska odbywa się co roku w trzecim tygodniu września już od 1994 roku!</p>
           <p>3. Ocieplenie klimatu może spowodować, że w 2050 roku tereny wokół wybrzeży Wielkiej Brytanii znajdą się pod wodą.</p>
           <p>4. Statystyczny Polak wytwarza ponad 320 kg śmieci rocznie.</p>
@@ -44,9 +84,10 @@
           <p>11. Wokół Ziemi krąży około 10 tysięcy satelitów, w tym wiele wycofanych z eksploatacji.</p>
           <p>12. Skoszona trawa, liście i resztki jedzenia świetnie nadadzą się na kompost!</p>
           <p>13. Anglicy wyliczyli, że wyrzucane w ciągu roku butelki plastikowe (PET), ustawione jedna na drugiej utworzyłyby wieżę o wysokości 28 mln km, co stanowi 73-krotną odległość Ziemi od Księżyca.</p>
+          -->
 
 
-          <div class="source">
+          <div class="source" style="position: relative; bottom: 10;">
             <b>Źródła</b>
             <p>listydlaziemi.pl</p>
             <p>wikipedia.pl</p>
