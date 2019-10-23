@@ -4,6 +4,18 @@ var img_size = 60;
 var trashes_list = [{ img:'../data/imgs/Pudelko.png', width: 60 , height: 60, bin: 1} ,
 { img:'../data/imgs/butelka2.png', width: 70*0.8 , height: 120*0.7, bin:2} ,
 { img:'../data/imgs/Butelka_plst.png', width: 70*0.7, height: 120*0.7, bin:3} ,
+];
+
+var game1_imgs = [
+    
+    { img:'../data/imgs/Gra1_3.png', width: 62 , height: 39 },
+    { img:'../data/imgs/Gra1_1.png', width: 66 , height: 46 },
+    { img:'../data/imgs/Gra1_2.png', width: 66 , height: 46 },    
+    { img:'../data/imgs/Gra1_4.png', width: 72 , height: 52 },
+    { img:'../data/imgs/Gra1_5.png', width: 85 , height: 50 },
+    { img:'../data/imgs/Gra1_6.png', width: 111 , height: 68 },
+    { img:'../data/imgs/Gra1_7.png', width: 124 , height: 72 },
+    { img:'../data/imgs/Gra1_8.png', width: 180 , height: 108 },
 
 ];
 function sound(src) {
