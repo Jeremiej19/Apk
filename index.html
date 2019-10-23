@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
   <body>
+
     <div id="main">
 
         <div id="header">
@@ -32,6 +33,28 @@
           <p>Ma on na celu uświadomienie jak dużym problemem są odpady oraz poprzez zabawę nauczyć jak takie odpady segregować.</p>
 
 
+          <!-- <div style="height: 150px; background-color: #bccfcbb2; padding: 15px;">
+              <button onclick="losuj(); return false;" style="margin-left:45%; padding: 10px;">Losuj</button>
+            <h3 class="center" style="float: none;">Czy wiedziałeś że ..</h3>
+            <p id="ciek" class="center" style="float: none;"></p> -->
+
+                       
+            <div style="height: 200px; background-color: #bccfcbb2; padding: 15px; position: relative; top: 200px; width: 90%; margin:auto;">
+                <h2 class="center">Czy wiedziałeś że ..</h2>  
+              <p id="ciek" class="center" style="height: 80px;"></p>
+                
+  
+                <div class="buttons" style="width: 150px;">
+                <div class="button" onclick="losuj(); return false;" style="-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;">Losuj</div>
+                </div>
+              </div>
+
+            </div>
+        
+
+
+
+  
         </div>
 
         
@@ -41,5 +64,30 @@
         </div>
 
     </div>
+    <script>
+        var ciekawostki = [
+        "Czy wiedziałeś, że do wyprodukowania jednej tony papieru ścinane jest aż 17 drzew?",
+        "Akcja Sprzątanie świata - Polska odbywa się co roku w trzecim tygodniu września już od 1994 roku!",
+        "Ocieplenie klimatu może spowodować, że w 2050 roku tereny wokół wybrzeży Wielkiej Brytanii znajdą się pod wodą.",
+        "Statystyczny Polak wytwarza ponad 320 kg śmieci rocznie.",
+        "Około 2mln ptaków i ssaków wodnych ginie na świecie na skutek połknięcia plastikowych odpadów wrzucanych do mórz i oceanów",
+        "Jeden hektar lasu liściastego może wyprodukować około 700 kg tlenu, co stanowi dobowe zapotrzebowanie ponad 2500 ludzi.",
+        "Rzucona w lesie butelka plastikowa rozłoży się w ziemi po 500 latach, guma do żucia po 5 latach, a niedopałki papierosów po 2 latach.",
+        "Potłuczonych talerzy i kubków nie wrzucamy do pojemnika na szkło, ponieważ nie nadają się do ponownego przetworzenia. Wrzucamy je do pojemnika na odpady zmieszane.",
+        "Paragony mimo, że są z papieru nie nadają się do ponownego przetworzenia.",
+        "Czy wiedziałeś, że z plastikowych butelek można zrobić ubrania?",
+        "Wokół Ziemi krąży około 10 tysięcy satelitów, w tym wiele wycofanych z eksploatacji.",
+        "Skoszona trawa, liście i resztki jedzenia świetnie nadadzą się na kompost!",
+        "Anglicy wyliczyli, że wyrzucane w ciągu roku butelki plastikowe (PET), ustawione jedna na drugiej utworzyłyby wieżę o wysokości 28 mln km, co stanowi 73-krotną odległość Ziemi od Księżyca."
+      ]
+
+      function losuj() {
+
+        var cie = document.getElementById("ciek");
+
+        cie.innerHTML = ciekawostki[parseInt(Math.random() * ciekawostki.length)];
+      }
+      losuj();
+    </script>
   </body>
 </html>
