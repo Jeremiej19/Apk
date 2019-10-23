@@ -134,6 +134,20 @@ div.spis {
     color: #333333;
 }
 
+ol.spis_main {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    list-style: none;
+    font-size: 35px;
+    line-height: 50px;
+}
+
+ol.spis_main a {
+    text-decoration: none;
+}
+
 /* kosze */
 
 div.blue {
@@ -347,4 +361,39 @@ img.center {
 
 h3,h2 {
     margin: 10px;
+}
+
+hr {
+    border-top: #85c0ad 2px solid;
+}
+
+div.buttons {
+    width: 308px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.button {
+    padding: 15px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    display: block;
+    background-color: #bbbbbb;
+    border: #64d8b5 2px solid;
+    border-radius: 1px;
+    float: left;
+    margin: 10px;
+}
+
+div.button:hover {
+    background-color: #a1adaa;
+    border: #42cca3 2px solid
+}
+
+a.button {
+    text-decoration: none;
 }
