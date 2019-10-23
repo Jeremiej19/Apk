@@ -24,13 +24,13 @@ function spawn_enemy( )
 
     var obj = document.createElement("img");
     
-    var nr =  parseInt( Math.random() * ( trashes_list.length ) );
+    var nr =  parseInt( Math.random() * ( game1_imgs.length ) );
  
     
-    obj.src = trashes_list[nr].img;
+    obj.src = game1_imgs[nr].img;
     obj.className = " trash";      
-    var img_width =  trashes_list[nr].width;
-    var img_height =  trashes_list[nr].height;
+    var img_width =  game1_imgs[nr].width;
+    var img_height =  game1_imgs[nr].height;
     
     var where =  parseInt( Math.random() * ( width - img_width ) );
     obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_height}px; width:${img_width}px; height:${img_height}px;`;
