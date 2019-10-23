@@ -49,7 +49,7 @@ session_start();
 
               //pytania do qiuzu w notacji pytanie,opd1,odp2,dop3,poprwawnaodp
               $tabela=array(array("jeramiasz ma 12 lat?", "nie", "tak", "może", "1"),
-              array("bartek to dzieciaczek bo nie ma 18?", "nie", "tak", "może", "2"),
+              array("bartek to dzieciaczek bo nie ma 18?", "nie", "chyba w snach", "twoja stara sus", "2"),
               array("paweł ma prawojadzy?", "nie", "tak", "może", "2"),
               array("zdążymy na 25?", "nie", "tak", "może", "3"),
               array("czy ci sie odobało?", "nie", "tak", "może", "2"));
