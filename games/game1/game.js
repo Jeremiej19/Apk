@@ -92,6 +92,14 @@ function spawn_enemy( )
            $("#score").html(++score);
        }
        
+        ///koniec gry
+        if( lives == 0 )
+        {
+            clearInterval( spawn );
+            
+            $('#board').html('<p id="end"> Koniec gry </p>');
+        }
+       
     };
 
     
