@@ -28,7 +28,7 @@ body
     background-color: yellow;
     /* background: url( ); */
     width: 800px;
-    height: 20px;
+    height: 50px;
     font-weight: bold;
     z-index: 100;
 }
@@ -36,7 +36,14 @@ body
 {
     width: 50%;
     float: left;
-    text-align: center;
+    
+}
+
+#hearts img
+{
+    
+    width: 70px;
+    height: 50px;
 }
 #board
 {
@@ -49,6 +56,7 @@ body
     
     text-align:center;
 }
+
 #board #end
 {
     position: relative;

@@ -17,6 +17,13 @@ function delete_obj( obj )
     obj.parentElement.removeChild(obj);
 }
 
+function minus_hp()
+{
+    new sound("../data/sound/wrong.mp3").play();
+    --lives;
+    document.getElementsByClassName("heart")[lives].style.visibility = "hidden";
+}
+
 function koniec()
 {
     if( lives <= 0 )
@@ -103,7 +110,7 @@ function spawn_enemy( )
             }
             else
             {
-                $("#lives").html(--lives);
+                minus_hp();
                
             }
 
@@ -127,7 +134,7 @@ function spawn_enemy( )
        delete_obj(this);
        if( game1_imgs[nr].neutral == 1 )
        {
-          $("#lives").html(--lives);
+           minus_hp();
        }
        else
        {
@@ -147,6 +154,12 @@ function spawn_enemy( )
     
 }
 
+function start( )
+{
+    spawn = setInterval( 'spawn_enemy();' , spawn_delay ); 
+    $('#info').css('display','none');  
+
+}
 
 
 $(document).ready(function(){
@@ -162,7 +175,7 @@ $(document).ready(function(){
         <h2>Informacje o grze</h2>
         <p>Nie pozwól żeby śmieci przedostały sie do oceanu! Klikaj śmieci myszką aby je zebrać.</p> 
         <p>Uważaj jednak aby nie złapać zwierząt!</p>
-        <button onclick="spawn = setInterval( 'spawn_enemy();' , ${spawn_delay} );   $('#info').css('display','none');   "> START </button>
+        <button onclick="start(); "> START </button>
     
     </div>
     `);
