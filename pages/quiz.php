@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <title>Document</title>
 </head>
   <body>
@@ -19,10 +19,10 @@ session_start();
 
           <div id="nav">
             <ul id="menu">
-              <a href="index.php"><li>Strona główna</li></a>
-              <a href="kurs_begin.html"><li>Kurs</li></a>
-              <a href="games_list.html"><li>Gry</li></a>
-              <a href="quiz.php"><li>Quizy</li></a>
+              <a href="../index.html"><li>Strona główna</li></a>
+              <a href="kurs_begin.html"><li>Instruktaż</li></a>
+              <a href="games_list.html"><li>Gry i Quizy</li></a>
+              <a href="ciekawostki.html"><li>Ciekawostki</li></a>
               <a href="authors.html"><li>O autorach</li></a>
             </ul>
 
