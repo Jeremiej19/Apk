@@ -93,15 +93,8 @@ function spawn_enemy( )
     
 }
 
-
-
-$(document).ready(function(){
-
-    $("#board").css("width" , width + "px");
-    $("#board").css("height" , height + "px");
-    $("#scoreboard").css("width" , width + "px");
-    $("#lives").html(lives);
-
+function game_start()
+{
     spawn_enemy( );
     spawn = setInterval( "spawn_enemy();" , spawn_delay );
 
@@ -132,10 +125,31 @@ $(document).ready(function(){
                 {
                 clearInterval( spawn );
               
-                $('#board').html('<p onclick="window.location.reload(true);"> Koniec gry </p>');
+                $('#board').html('<p id="end" onclick="window.location.reload(true);"> Koniec gry </p>');
                 }
             }
         });
     }
+}
+
+
+$(document).ready(function(){
+
+    $("#board").css("width" , width + "px");
+    $("#board").css("height" , height + "px");
+    $("#scoreboard").css("width" , width + "px");
+    $("#lives").html(lives);
+
+
+    $("#board").append(`
+    <div id="info">
+    
+        <h2>Informacje o grze</h2>
+        <p>Posegreguj śmieci do odpowiednich koszy</p> 
+        <!--<p>Uważaj jednak aby nie złapać zwierząt!</p>-->
+        <button onclick="game_start();   $('#info').css('display','none');   "> START </button>
+    
+    </div>
+    `);
   
   });
