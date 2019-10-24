@@ -44,7 +44,7 @@ function koniec()
 }
 function check_score(  )
 {
-    if( score == 1 )
+    if( score == 25 )
     {
         clearInterval( spawn );
               
@@ -133,6 +133,7 @@ function spawn_enemy( )
        // this.parentElement.removeChild(this);
 
        delete_obj(this);
+
        if( game1_imgs[nr].neutral == 1 )
        {
            minus_hp();
@@ -176,6 +177,7 @@ $(document).ready(function(){
         <h2>Informacje o grze</h2>
         <p>Nie pozwól żeby śmieci przedostały sie do oceanu! Klikaj śmieci myszką aby je zebrać.</p> 
         <p>Uważaj jednak aby nie złapać zwierząt!</p>
+        <p>Zdobądź 25 aby przejść dalej.</p>
         <button onclick="start(); "> START </button>
     
     </div>
