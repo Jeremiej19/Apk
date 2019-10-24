@@ -65,15 +65,12 @@ body
 
 #info
 {
-    background-color: beige;
-    opacity: 0.9;
+    background-color: #85c0adcb;
     width: 80%;
-    height: 60%;
+    height: 50%;
     margin: auto;
-    position: absolute;
-    top: 20%;
-    right: 10%;
-    z-index: 200;
+    position: relative;
+    top: 25%;
 }
 
 
@@ -89,8 +86,12 @@ body
 #info button
 {
     padding: 15px;
-    background-color: white;
-    border-radius: 20%;
+    background-color: #bbbbbb;
     font-weight: bold;
     font-size: 20px;
+    text-align: center;
+    border: #64d8b5 2px solid;
+    padding: 15px;
+    font-size: 20px;
 }
+
