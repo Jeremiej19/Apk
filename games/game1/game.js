@@ -17,6 +17,49 @@ function delete_obj( obj )
     obj.parentElement.removeChild(obj);
 }
 
+function koniec()
+{
+    if( lives <= 0 )
+    {
+        clearInterval( spawn );
+              
+        $('#board').html(`
+        <div id="info">
+        
+            <h2 style="margin-bottom: 60px;position:relative;top: 40px;">Koniec żyć</h2>
+            <button onclick="location.reload(); "> Spróbuj ponownie </button>
+        
+        </div>
+        `);
+    }
+
+    
+}
+function check_score(  )
+{
+    if( score == 5 )
+    {
+        clearInterval( spawn );
+              
+        $('#board').html(`
+        <div id="info">
+        
+            <h2>Gratulacje</h2>
+            <button onclick="spawn = setInterval( 'spawn_enemy();' , ${spawn_delay} );   $('#info').css('display','none'); "> Graj dalej </button>
+            <button onclick="location.reload(); "> Dalej </button>
+        
+        </div>
+        `);
+    }
+}
+function difficulty( )
+{
+    if( score % 5 == 0 )
+    {
+        object_animation_duration *= 0.9;
+        spawn_delay *= 0.9;
+    }
+}
 function spawn_enemy( )
 {
 
@@ -55,6 +98,8 @@ function spawn_enemy( )
             if( game1_imgs[${nr}].neutral == 1 )
             {
                 $("#score").html(++score);
+                // check_score(  );
+                difficulty( );
             }
             else
             {
@@ -63,12 +108,9 @@ function spawn_enemy( )
             }
 
             ///koniec gry
-            if( lives == 0 )
-            {
-                clearInterval( spawn );
-              
-                $('#board').html('<p id="end"> Koniec gry </p>');
-            }
+          
+            koniec();
+            
 
          }
 
@@ -85,21 +127,19 @@ function spawn_enemy( )
        delete_obj(this);
        if( game1_imgs[nr].neutral == 1 )
        {
-        $("#lives").html(--lives);
+          $("#lives").html(--lives);
        }
        else
        {
            $("#score").html(++score);
+        //    check_score(  );
+           difficulty( );
        }
        
         ///koniec gry
-        if( lives == 0 )
-        {
-            clearInterval( spawn );
-            
-            $('#board').html('<p id="end"> Koniec gry </p>');
-        }
-       
+
+        koniec();
+        
     };
 
     

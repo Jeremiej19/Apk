@@ -12,6 +12,7 @@
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+    font-family: Arial;
     }
 
       /* img{pointer-events: none;} */
