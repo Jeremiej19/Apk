@@ -51,10 +51,10 @@ function check_score(  )
         $('#board').html(`
         <div id="info">
         
-            <h2>Gratulacje</h2>
-            <button onclick="spawn = setInterval( 'spawn_enemy();' , ${spawn_delay} );   $('#info').css('display','none'); "> Graj dalej </button>
-            <form action="../../pages/kurs_3.html" target="_top">
-            <button> Dalej </button>
+            <h2 style=" padding-top: 70px;">Gratulacje</h2>
+            <button onclick="spawn = setInterval( 'spawn_enemy();' , ${spawn_delay} );   $('#info').css('display','none'); "> Kontynuuj grę </button>
+            <form action="../../pages/kurs_3.html" target="_top" style="display: inline;">
+            <button> Przejdź dalej </button>
             </form>
         </div>
         `);
