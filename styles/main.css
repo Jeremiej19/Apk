@@ -380,7 +380,7 @@ div.buttons {
     margin-right: auto;
 }
 
-div.button {
+div.button, input {
     padding: 15px;
     font-size: 20px;
     text-align: center;
