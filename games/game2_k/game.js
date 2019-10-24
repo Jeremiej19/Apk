@@ -40,6 +40,31 @@ function koniec()
     
 }
 
+function check_score(  )
+{
+    if( score == 20 )
+    {
+        clearInterval( spawn );
+              
+        $('#board').html(`
+        <div id="info">
+        
+            <h2 style=" padding-top: 70px;">Gratulacje</h2>
+            <button onclick="game_start();   $('#info').css('display','none');"> Kontynuuj grę </button>
+            <form action="../../pages/kurs_5.html" target="_top" style="display: inline;">
+            <button> Przejdź dalej </button>
+            </form>
+        </div>
+        <div class="bin" id="1" style="float: left; position: absolute;bottom: 0; background: url('../data/imgs/Gra2_smietnik1.png');">
+        </div>
+        <div class="bin" id="2" style="position: absolute;bottom: 0; left: 33.3%; background: url('../data/imgs/Gra2_smietnik2.png');">
+        </div>
+        <div class="bin" id="3" style="position: absolute;bottom: 0; left: 66.6%; width: 33.4%; background: url('../data/imgs/Gra2_smietnik3.png');">
+        </div>
+        `);
+    }
+}
+
 function delete_obj( obj )
 {
     obj.parentElement.removeChild(obj);
@@ -135,12 +160,12 @@ function game_start()
                     $("#score").html(++score);
                     delete_obj(draged_item);
                     draged_item = null;
+                    check_score(  );
                 }
             else
             {
                 minus_hp();
                 koniec();
-
             }
         });
     }
@@ -160,6 +185,7 @@ $(document).ready(function(){
     
         <h2>Informacje o grze</h2>
         <p>Posegreguj śmieci do odpowiednich koszy</p> 
+        <p>Zdobądź 20 aby przejść dalej.</p>
         <button onclick="game_start();   $('#info').css('display','none');   "> START </button>
     
     </div>
