@@ -97,9 +97,12 @@ body
 #info button
 {
     padding: 15px;
-    background-color: white;
-    border-radius: 20%;
+    background-color: #bbbbbb;
     font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    border: #64d8b5 2px solid;
+    padding: 15px;
     font-size: 20px;
 }
 
