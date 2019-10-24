@@ -28,16 +28,16 @@ function spawn_enemy( )
     var obj = document.createElement("img");
 
     
-    var nr =  parseInt( Math.random() * ( trashes_list.length ) );
+    var nr =  parseInt( Math.random() * ( game2_imgs.length ) );
 
     
-    obj.src = trashes_list[nr].img;
-    obj.className = trashes_list[nr].bin;
+    obj.src = game2_imgs[nr].img;
+    obj.className = game2_imgs[nr].bin;
     obj.className += " trash";       
     
-    var img_width = trashes_list[nr].width;
-    var img_height= trashes_list[nr].height;
-    obj.style = `z-index:10; position: absolute; left: ${ -img_width }px; top: ${parseInt(height/2)-img_height}px; width:${img_width}px; height:${img_height}px;`;
+    var img_width = game2_imgs[nr].width;
+    var img_height= game2_imgs[nr].height;
+    obj.style = `z-index:10; position: absolute; left: ${ -img_width }px; top: ${parseInt(height/2.2)-img_height}px; width:${img_width}px; height:${img_height}px;`;
 
     obj.draggable = true;
 
