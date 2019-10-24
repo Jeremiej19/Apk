@@ -2,7 +2,7 @@ var img_size = 60;
 
 
 var game2_imgs = [{ img:'../data/imgs/Pudelko.png', width: 60 , height: 60, bin: 2} ,
-{ img:'../data/imgs/butelka2.png', width: 70*0.8 , height: 120*0.7, bin:3} ,
+{ img:'../data/imgs/Butelka2.png', width: 70*0.8 , height: 120*0.7, bin:3} ,
 { img:'../data/imgs/Butelka_plst.png', width: 70*0.7, height: 120*0.7, bin:1} ,
 ];
 

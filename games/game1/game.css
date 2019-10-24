@@ -105,3 +105,6 @@ body
     font-size: 20px;
 }
 
+a{
+    display: none;
+}
