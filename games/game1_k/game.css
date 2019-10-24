@@ -20,7 +20,7 @@
 
 body
 {
-    background: green;
+    background: #d8d8d8;
 }
 #scoreboard
 {
@@ -75,8 +75,7 @@ body
 
 #info
 {
-    background-color: beige;
-    opacity: 0.9;
+    background-color: #85c0adcb;
     width: 80%;
     height: 50%;
     margin: auto;
@@ -97,9 +96,12 @@ body
 #info button
 {
     padding: 15px;
-    background-color: white;
-    border-radius: 20%;
+    background-color: #bbbbbb;
     font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    border: #44917a 2px solid;
+    padding: 15px;
     font-size: 20px;
 }
 

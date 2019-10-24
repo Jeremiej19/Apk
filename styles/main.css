@@ -409,3 +409,7 @@ div.button:hover {
 a.button {
     text-decoration: none;
 }
+
+img {
+    margin-bottom: 5px;
+}
