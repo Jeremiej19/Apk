@@ -40,6 +40,7 @@ body {
 
 #main {
     max-width: 1000px;
+    min-width: 500px;
     margin: 0 auto;
 }
 
@@ -380,7 +381,7 @@ div.buttons {
     margin-right: auto;
 }
 
-div.button,input,button {
+div.button, button {
     padding: 15px;
     font-size: 20px;
     text-align: center;
