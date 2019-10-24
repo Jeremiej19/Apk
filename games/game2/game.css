@@ -35,8 +35,8 @@ body
 {
     position: absolute;
      top:20px; 
-    background-color: blue;
-    /* background: url( ); */
+    /* background-color: blue; */
+    background: url('../data/imgs/Gra2_tlo.gif') ;
     width: 800px;
     height: 600px;
     
