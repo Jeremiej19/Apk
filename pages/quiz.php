@@ -39,11 +39,11 @@ session_start();
                 $test = $tabela[$rand];
                 $ile = count($test);
                 echo "<form action='' method='post'><br><p>$test[0]</p><br>";
-                echo "<label><input type='radio' name='pytanie' value='1'>$test[1]</label><br>".
-                "<label><input type='radio' name='pytanie' value='2'>$test[2]</label><br>";
+                echo "<label><input type='radio' name='pytanie' value='1'>$test[1]</label><br><br>".
+                "<label><input type='radio' name='pytanie' value='2'>$test[2]</label><br><br>";
                 if ($ile>4){
-                  echo"<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br>";}
-                elseif($ile>5){echo"<label><input type='radio' name='pytanie' value='3'>$test[4]</label><br>";}
+                  echo"<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br><br>";}
+                if($ile>5){echo"<label><input type='radio' name='pytanie' value='4'>$test[4]</label><br><br>";}
                 echo "<input type='submit' value='dajesz' name='poszlo'>";
                 
 
@@ -51,11 +51,27 @@ session_start();
 
 
               //pytania do qiuzu w notacji pytanie,opd1,odp2,dop3,poprwawnaodp
-              $tabela=array(array("jeramiasz ma 12 lat?", "nie", "tak", "może", "1"),
-              array("bartek to dzieciaczek bo nie ma 18?", "nie", "chyba w snach", "twoja stara sus", "2"),
-              array("paweł ma prawojadzy?", "nie", "tak", "2"),
-              array("zdążymy na 25?", "nie", "tak", "może", "3"),
-              array("czy ci sie odobało?", "nie", "tak", "może", "2"));
+              $tabela=array(array("Który z tych przedmiotów wrzucisz do pojemnika koloru zielonego?", "Gazeta", "Butelka", "Puszka", "Lustro", "3"),
+              array("Który z tych przedmiotów wrzucisz do pojemnika koloru zielonego?", "Gazeta", "Butelka", "Puszka", "Lustro", "2"),
+              array("Odpady biodegradowalne to:", "uboczne produkty działalności gospodarczej i procesów produkcyjnych. ", "odpady, które powstają w gospodarstwach domowych", "odpady, które ulegają rozkładowi pod wpływem działania mikroorganizmów i nie stanowią zagrożenia dla środowiska naturalnego", "odpady, które ze względu na swoje pochodzenie, skład i właściwości (żrące, drażniące, toksyczne, wybuchowe) stanowią zagrożenie dla życia lub zdrowia oraz negatywnie wpływają na środowisko", "3"),
+              array("Recykling to:", "niszczenie odpadów w sposób bezpieczny dla środowiska"," segregowanie śmieci ze względu na materiał, z którego są wykonane","ponowne wykorzystanie materiałów lub substancji z odpadów do wytworzenia nowych produktów","naprawiania zepsutych urządzeń i przedmiotów codziennego użytku i ponowne ich użytkowanie", "3"),
+              array("Co należy zrobić ze zużytymi bateriami?","wyrzuca się je do kosza na śmieci","trzeba je wyrzucić do specjalnych pojemników","najlepiej zakopać je w ziemi","wyrzuca się je do pojemnika na plastik lub puszki", "3"),
+              array("Co oznacza symbol złożony z trzech strzałek ułożonych w kształcie trójkąta","opakowanie nadaje się do recyklingu","opakowanie jest biodegradowalne","opakowanie nadaje się do spożycia","opakowanie nadaje się do ponownego użytku","1"),
+              array("Który z podanych przedmiotów jest przedmiotem wielokrotnego użytku?","reklamówka foliowa","lniana torba","plastikowe sztućce","plastikowy kubek","2"),
+              array("Organizacją ekologiczną posiadającą pandę w swoim logo jest:","GREENPEACE","World Wide Found for Nature (WWF)","Międzynarodowy Zielony Krzyż","Liga Ochrony Przyrody","2"),
+              array("Kiedy odbywa się coroczna Akcja Sprzątanie Świata Polska","pierwszy tydzień czerwca ","drugi tydzień września","trzeci tydzień września","drugi tydzień kwietnia","3"),
+              array("Czy z plastikowych butelek można uszyć ubrania?","tak","nie","1"),
+              array("Czy paragony nadają się do ponownego przetworzenia?","tak","nie","2"),
+              array("Na którym oceanie znajduje się największa wyspa śmieci?","Atlantyckim","Arktycznym","Indyjskim","Spokojnym","4"),
+              array("Po jakim czasie rozłoży się plastikowa butelka?","5 lat","300 lat","6 miesięcy","500 lat","4"),
+              array("Odpadem niebezpiecznym nie jest/nie są:","reklamówka foliowa","środki pirotechniczne","tusz","farba","1"),
+              array("Który z podanych odpadów jest największym zagrożeniem dla zwierząt żyjących w oceanie?","tekturowe opakowanie","foliowa reklamówka","puszka po konserwie","stare sieci rybackie","2"),
+              array( "Jaki kolor pojemnika przeznaczony jest na odpady szklane?","niebieski","zielony","żółty","czarny","2"),
+              array("Czy skoszona trawa, liście i resztki jedzenia będą dobrym składnikiem kompostu?","tak","nie","1"),
+              array("Do jakiego pojemnika wrzucisz potłuczone talerze i kubki?","na szkło","na papier","na metal","na odpady zmieszane","4"),
+              array("Co oznacza liczba w środku znaku recyklingu, którym oznacza się produkty nadające się do przetworzenia?","numer seryjny produktu","datę przydatności do spożycia","kod użytego materiału","cenę","3"),
+              array("Czego nie wolno ci zrobić ze starym urządzeniem elektronicznym?","sprzedać","oddać do punktu skupu","pozostawić w lesie","oddać na cele dobroczynne","3"),
+              array("Ile kilogramów śmieci rocznie wytwarza statystyczny Polak?","85kg","135kg","460kg","320kg","4"));
               if (!isset($_SESSION['i']) and !isset($_POST['start']))
               {
                  //tu jest poczatek
@@ -70,7 +86,7 @@ session_start();
                   $_SESSION['last'] = $arr;
                   $_SESSION['ran'] = rand(1,(count($tabela)-1));
                 } 
-                if($_SESSION['j'] < 4)
+                if($_SESSION['j'] < 10)
                 {
                   if (isset($_POST['hello'] )or isset($_POST['next']) or !isset($_POST['pytanie'])){
                     //--------------------------------TU QUIZ ODPALANY----------------------
@@ -83,7 +99,7 @@ session_start();
                   {//sprawdzanie odp / new random
                     $test = $_SESSION['ran'];
                     array_push($_SESSION['last'], $test);
-                    if($_SESSION['j'] < 3){
+                    if($_SESSION['j'] < 9){
                       do{
                         $test = rand(1,(count($tabela)-1));
                       }while(in_array($test, $_SESSION['last']));
@@ -102,7 +118,7 @@ session_start();
                       $_SESSION['points'] += 1;
                     }
                     else{
-                      echo "zle, prawidłowa odp to";
+                      echo "zle";
                     }
                     //pojawienie buttona next
                     echo "<form action='' method='post'>";
