@@ -19,11 +19,10 @@ session_start();
 
           <div id="nav">
             <ul id="menu">
-              <a href="../index.html"><li>Strona główna</li></a>
-              <a href="kurs_begin.html"><li>Instruktaż</li></a>
-              <a href="games_list.html"><li>Gry i Quizy</li></a>
-              <a href="ciekawostki.html"><li>Ciekawostki</li></a>
-              <a href="authors.html"><li>O autorach</li></a>
+              <a href="../raload/index.php"><li>Strona główna</li></a>
+              <a href="../raload/kurs.php"><li>Instruktaż</li></a>
+              <a href="../raload/games.php"><li>Gry i Quizy</li></a>
+              <a href="../raload/autors.php"><li>O autorach</li></a>
             </ul>
 
           </div>
