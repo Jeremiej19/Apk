@@ -37,13 +37,13 @@ session_start();
               function quiz($tabela, $rand){
                 $test = $tabela[$rand];
                 $ile = count($test);
-                echo "<form action='' method='post'><br><p>$test[0]</p><br>";
+                echo "<form action='' method='post'><br><h3>$test[0]</h3><br>";
                 echo "<label><input type='radio' name='pytanie' value='1'>$test[1]</label><br><br>".
                 "<label><input type='radio' name='pytanie' value='2'>$test[2]</label><br><br>";
                 if ($ile>4){
                   echo"<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br><br>";}
                 if($ile>5){echo"<label><input type='radio' name='pytanie' value='4'>$test[4]</label><br><br>";}
-                echo "<input type='submit' value='dajesz' name='poszlo'>";
+                echo "<input type='submit' value='sprawdź' name='poszlo'>";
                 
 
               }
@@ -121,7 +121,7 @@ session_start();
                     }
                     //pojawienie buttona next
                     echo "<form action='' method='post'>";
-                    echo "<button type='submit' name='next' value='tak'>next</button>";
+                    echo "<input type='submit' value='Następne pytanie' name='next' value='tak'>";
                     echo "</form>";
                     $_SESSION['j']+= 1;
                     }
