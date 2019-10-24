@@ -14,7 +14,31 @@ var draged_item = null;
 
 
 
+function minus_hp()
+{
+    new sound("../data/sound/wrong.mp3").play();
+    --lives;
+    document.getElementsByClassName("heart")[lives].style.visibility = "hidden";
+}
 
+function koniec()
+{
+    if( lives <= 0 )
+    {
+        clearInterval( spawn );
+              
+        $('#board').html(`
+        <div id="info">
+        
+            <h2 style="margin-bottom: 60px;position:relative;top: 40px;">Koniec żyć</h2>
+            <button onclick="location.reload(); "> Spróbuj ponownie </button>
+        
+        </div>
+        `);
+    }
+
+    
+}
 
 function delete_obj( obj )
 {
@@ -72,15 +96,10 @@ function spawn_enemy( )
          {
             delete_obj(this);
             
-            $("#lives").html(--lives);
+            minus_hp();
 
             ///koniec gry
-            if( lives == 0 )
-            {
-                clearInterval( spawn );
-              
-                $('#board').html('<p onclick="window.location.reload(true);"> Koniec gry </p>');
-            }
+            koniec();
 
          }
 
@@ -120,13 +139,9 @@ function game_start()
             else
             {
                 new sound("../data/sound/wrong.mp3").play();
-                $("#lives").html(--lives);
-                if( lives == 0 )
-                {
-                clearInterval( spawn );
-              
-                $('#board').html('<p id="end" onclick="window.location.reload(true);"> Koniec gry </p>');
-                }
+                minus_hp();
+                koniec();
+
             }
         });
     }
@@ -146,7 +161,6 @@ $(document).ready(function(){
     
         <h2>Informacje o grze</h2>
         <p>Posegreguj śmieci do odpowiednich koszy</p> 
-        <!--<p>Uważaj jednak aby nie złapać zwierząt!</p>-->
         <button onclick="game_start();   $('#info').css('display','none');   "> START </button>
     
     </div>
