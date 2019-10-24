@@ -117,7 +117,7 @@ session_start();
                       $_SESSION['points'] += 1;
                     }
                     else{
-                      echo "zle";
+                      echo "zle, prawidłowa to:<br>".$tabela[$actual[$jay]][$tabela[$actual[$jay]][$elia]];
                     }
                     //pojawienie buttona next
                     echo "<form action='' method='post'>";
