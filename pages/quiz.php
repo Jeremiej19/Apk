@@ -7,7 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <title>Document</title>
 </head>
   <body>
@@ -19,10 +19,10 @@ session_start();
 
           <div id="nav">
             <ul id="menu">
-              <a href="index.php"><li>Strona główna</li></a>
-              <a href="kurs_begin.html"><li>Kurs</li></a>
-              <a href="games_list.html"><li>Gry</li></a>
-              <a href="quiz.php"><li>Quizy</li></a>
+              <a href="../index.html"><li>Strona główna</li></a>
+              <a href="kurs_begin.html"><li>Instruktaż</li></a>
+              <a href="games_list.html"><li>Gry i Quizy</li></a>
+              <a href="ciekawostki.html"><li>Ciekawostki</li></a>
               <a href="authors.html"><li>O autorach</li></a>
             </ul>
 
@@ -37,11 +37,14 @@ session_start();
               //tu jest funkcja do wywoływania formularza
               function quiz($tabela, $rand){
                 $test = $tabela[$rand];
+                $ile = count($test);
                 echo "<form action='' method='post'><br><p>$test[0]</p><br>";
                 echo "<label><input type='radio' name='pytanie' value='1'>$test[1]</label><br>".
-                "<label><input type='radio' name='pytanie' value='2'>$test[2]</label><br>".
-                "<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br>".
-                "<input type='submit' value='dajesz' name='poszlo'>";
+                "<label><input type='radio' name='pytanie' value='2'>$test[2]</label><br>";
+                if ($ile>4){
+                  echo"<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br>";}
+                elseif($ile>5){echo"<label><input type='radio' name='pytanie' value='3'>$test[4]</label><br>";}
+                echo "<input type='submit' value='dajesz' name='poszlo'>";
                 
 
               }
@@ -50,7 +53,7 @@ session_start();
               //pytania do qiuzu w notacji pytanie,opd1,odp2,dop3,poprwawnaodp
               $tabela=array(array("jeramiasz ma 12 lat?", "nie", "tak", "może", "1"),
               array("bartek to dzieciaczek bo nie ma 18?", "nie", "chyba w snach", "twoja stara sus", "2"),
-              array("paweł ma prawojadzy?", "nie", "tak", "może", "2"),
+              array("paweł ma prawojadzy?", "nie", "tak", "2"),
               array("zdążymy na 25?", "nie", "tak", "może", "3"),
               array("czy ci sie odobało?", "nie", "tak", "może", "2"));
               if (!isset($_SESSION['i']) and !isset($_POST['start']))
@@ -65,24 +68,35 @@ session_start();
                   $_SESSION['j']=0;$_SESSION['i'] = 0; $_SESSION['points'] = 0;
                   $arr=array();
                   $_SESSION['last'] = $arr;
-                  
+                  $_SESSION['ran'] = rand(1,(count($tabela)-1));
                 } 
-                if($_SESSION['i'] < 4 and $_SESSION['j'] < 5)
+                if($_SESSION['j'] < 4)
                 {
                   if (isset($_POST['hello'] )or isset($_POST['next']) or !isset($_POST['pytanie'])){
                     //--------------------------------TU QUIZ ODPALANY----------------------
-                  do{
-                    $test = rand(1,4);
-                  }while(in_array($test, $_SESSION['last']));
+                  $test = $_SESSION['ran'];
+
                   quiz($tabela, $test);
-                  array_push($_SESSION['last'], $test);
                   }
+
                   elseif(isset($_POST['pytanie']))
-                  {//sprawdzanie odp
+                  {//sprawdzanie odp / new random
+                    $test = $_SESSION['ran'];
+                    array_push($_SESSION['last'], $test);
+                    if($_SESSION['j'] < 3){
+                      do{
+                        $test = rand(1,(count($tabela)-1));
+                      }while(in_array($test, $_SESSION['last']));
+                      $_SESSION['ran'] = $test;
+                    }
+
+
                     $_SESSION["i"]+=1;
                     $actual = $_SESSION['last'];
                     $jay = $_SESSION['j'];
-                    if ($tabela[$actual[$jay]][4]==$_POST['pytanie'])
+                    $eil = count($tabela[$actual[$jay]]);
+                    $elia = $eil-1;
+                    if ($tabela[$actual[$jay]][$elia]==$_POST['pytanie'])
                     {
                       echo "super";
                       $_SESSION['points'] += 1;
@@ -104,6 +118,7 @@ session_start();
                   unset($_SESSION['points']);
                   unset($_SESSION['i']);
                   unset($_SESSION['j']);
+                  unset($_SESSION['last']);
                   echo "<button type='submit' onclick='window.location.reload(true)'>Jeszcze raz</button>";
                 }
 
