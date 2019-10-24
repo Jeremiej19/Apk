@@ -9,6 +9,12 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/main.css">
     <title>Document</title>
+    <style>
+      input{
+        margin-left:15px;
+        margin-right:15px;
+      }
+      </style>
 </head>
   <body>
  
@@ -43,7 +49,7 @@ session_start();
                 if ($ile>4){
                   echo"<label><input type='radio' name='pytanie' value='3'>$test[3]</label><br><br>";}
                 if($ile>5){echo"<label><input type='radio' name='pytanie' value='4'>$test[4]</label><br><br>";}
-                echo "<input type='submit' value='sprawdź' name='poszlo'>";
+                echo "<button type='submit' value='spr' name='poszlo'>Sprawdź</button>";
                 
 
               }
@@ -74,8 +80,9 @@ session_start();
               if (!isset($_SESSION['i']) and !isset($_POST['start']))
               {
                  //tu jest poczatek
-                echo "tu bedzie napisane zasady i wgl ze jest fajnie i jak nacisniesz start to magia bedzie<br>";
-                echo "<form action='' method='post'><br><button type='submit' name='start' value='tak'>start</button><br></form><br>";
+                echo "<h2>Quiz</h2><br>";
+                echo "<h4>10 losowych pytań, za każdą poprawną odpowiedź dostajesz 1 punkt. </h4><br>";
+                echo "<form action='' method='post'><br><button type='submit' name='start' value='tak'>Start</button><br></form><br>";
               }
               else{
                 //tu nic nie zmieniaj
@@ -113,15 +120,15 @@ session_start();
                     $elia = $eil-1;
                     if ($tabela[$actual[$jay]][$elia]==$_POST['pytanie'])
                     {
-                      echo "super";
+                      echo "<h3>Dobrze</h3>";
                       $_SESSION['points'] += 1;
                     }
                     else{
-                      echo "zle";
+                      echo "<h3>Źle</h3>";
                     }
                     //pojawienie buttona next
                     echo "<form action='' method='post'>";
-                    echo "<input type='submit' value='Następne pytanie' name='next' value='tak'>";
+                    echo "<button type='submit' style='width:200px;' value='Następne pytanie' name='next' value='tak'>Następne pytanie</button>";
                     echo "</form>";
                     $_SESSION['j']+= 1;
                     }
@@ -134,7 +141,7 @@ session_start();
                   unset($_SESSION['i']);
                   unset($_SESSION['j']);
                   unset($_SESSION['last']);
-                  echo "<button type='submit' onclick='window.location.reload(true)'>Jeszcze raz</button>";
+                  echo "<button type='submit' style='width:200px' onclick='window.location.reload(true)'>Spróbuj ponownie</button>";
                 }
 
               }
