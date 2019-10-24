@@ -271,6 +271,7 @@ div.osoba {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
+    border-bottom: 1px solid #b3b3b3;
 }
 
 div.osoba img {
