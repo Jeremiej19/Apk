@@ -4,6 +4,31 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #d6d6d6;
+    box-shadow: inset 1px 0px 2px #00000033;
+}
+
+::-webkit-scrollbar-track:hover {
+    box-shadow: inset 2px 0px 4px #006eff77;
+}
+
+::-webkit-scrollbar-thumb {
+    height: 90px;
+    width: 10px;
+    background: #1a857c;
+    border-radius: 5px;   
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #24b4a8;
+}
+
 p {
     font-size: 18px;
     width: 88%;
