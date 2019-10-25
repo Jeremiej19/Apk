@@ -152,7 +152,7 @@ session_start();
         </div>
 
         <div id="footer">
-          <p class="center">Tu bedo copyrighty</p>
+          <p class="center">ŚmiecioZaradni by Eko spece</p>
         </div>
 
     </div>
