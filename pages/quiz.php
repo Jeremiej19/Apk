@@ -9,7 +9,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="icon" href="page_imgs/Recycling_symbol2.svg.png">
-    <title>Document</title>
+    <title>Quiz</title>
     <style>
       input{
         margin-left:15px;
