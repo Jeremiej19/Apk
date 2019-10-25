@@ -35,7 +35,7 @@ a:active {
 }
 
 body {
-    background-color: rgb(187, 187, 187);
+    background-color: #bbbbbb;
 }
 
 #main {
@@ -49,7 +49,7 @@ body {
 #header {
     height: 110px;
     margin-bottom: 10px;
-    background-color: #1a936f;
+    background-image: linear-gradient(#1a936fd0, #1a936f) ;
 }
 
 h1.title {
@@ -103,7 +103,7 @@ h1.title {
 #content{
     min-height: 600px; /* tymczasowe */
     margin-bottom: 10px;
-    background-color: #d8d8d8;
+    background-color: #d8d8d8e8;
     padding:15px;
     overflow: auto;
 }
@@ -329,9 +329,9 @@ div.osoba img {
 
 #footer {
     height: 80px;
-    background-color: #1b333b;
+    background-image: linear-gradient(#1b333b, #1b333be8);
     padding: 5px;
-    color: whitesmoke;
+    color: #9acfcf;
 }
 
 
