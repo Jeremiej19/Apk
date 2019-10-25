@@ -1,9 +1,18 @@
 var img_size = 60;
 
 
-var game2_imgs = [{ img:'../data/imgs/Pudelko.png', width: 60 , height: 60, bin: 2} ,
-{ img:'../data/imgs/Butelka2.png', width: 70*0.8 , height: 120*0.7, bin:3} ,
-{ img:'../data/imgs/Butelka_plst.png', width: 70*0.7, height: 120*0.7, bin:1} ,
+var game2_imgs = [ 
+{ img:'../data/imgs/Gra2_niebieski1.png', width: 107 , height: 114 ,bin: 2 },
+{ img:'../data/imgs/Gra2_niebieski2.png', width: 102 , height: 101 ,bin: 2 },
+{ img:'../data/imgs/Gra2_zielony1.png', width: 68  , height: 76 ,bin: 3 },
+{ img:'../data/imgs/Gra2_zielony2.png', width: 67 , height: 79 ,bin: 3 },
+{ img:'../data/imgs/Gra2_zielony3.png', width: 71  , height: 100 ,bin: 3 },
+{ img:'../data/imgs/Gra2_zolty1.png', width: 97 , height: 98 ,bin: 1 },
+{ img:'../data/imgs/Gra2_zolty2.png', width: 88  , height: 62 ,bin: 1 },
+{ img:'../data/imgs/Gra2_zolty3.png', width: 68  , height: 78 ,bin: 1 },
+{ img:'../data/imgs/Gra2_zolty4.png', width: 76  , height: 85 ,bin: 1 },
+
+
 ];
 
 var game1_imgs = [
