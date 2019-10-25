@@ -40,7 +40,7 @@ body {
 
 #main {
     max-width: 1000px;
-    min-width: 500px;
+    min-width: 512px;
     margin: 0 auto;
 }
 
@@ -266,7 +266,7 @@ iframe {
 /* o nas */
 
 div.osoba {
-    height: 210px;
+    height: 150px;
     padding: 10px;
     margin-top: 15px;
     width: 85%;
