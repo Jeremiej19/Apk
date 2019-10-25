@@ -52,8 +52,9 @@ body {
     background-image: linear-gradient(#1a936fd0, #1a936f) ;
 }
 
-h1.title {
+#header img {
     margin-left: 25px;
+    height:62px;
     padding-top: 10px;
 }
 
