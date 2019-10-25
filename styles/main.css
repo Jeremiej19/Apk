@@ -48,7 +48,7 @@ body {
 
 #header {
     height: 110px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     background-image: linear-gradient(#1a936fd0, #1a936f) ;
 }
 
@@ -61,7 +61,6 @@ h1.title {
     background-color: #114b5f;
     height: 40px;
     position: relative;
-    top: 25px;
 }
 
 /* menu */
