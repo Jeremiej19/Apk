@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../styles/main.css">
+    <link rel="icon" href="page_imgs/Recycling_symbol2.svg.png">
     <title>Document</title>
     <style>
       input{
@@ -21,7 +22,7 @@ session_start();
     <div id="main">
 
         <div id="header">
-          <h1 class="title">jakis naglowek ergo tytul</h1>
+        <h1 class="title"><img src="../games/data/imgs/Logo.png" alt="ŚmiecioZaradni logo"></h1>
 
           <div id="nav">
             <ul id="menu">
