@@ -5,7 +5,7 @@ var height = 600;
 var spawn;
 
 var spawn_delay = 1000;
-var object_animation_duration = 3000;
+var object_animation_duration = 4000;
 
 var lives = 5;
 var score = 0;
@@ -29,7 +29,10 @@ function koniec()
     if( lives <= 0 )
     {
         clearInterval( spawn );
-              
+        console.log( intervals.length );
+        intervals.forEach(clearInterval);
+        intervals = [];
+        console.log( intervals.length );
         $('#board').html(`
         <div id="info">
         
@@ -59,6 +62,60 @@ function check_score(  )
         `);
     }
 }
+
+// function swing_left( obj , pos )
+// {
+//     console.log("l");
+//     $(obj).animate({
+//         left:  pos+40   + 'px'
+//     }, { queue: false, duration: 2500  });
+    
+// }
+// function swing_right( obj , pos )
+// {
+//     console.log("l");
+//     $(obj).animate({
+//         left:  pos-40   + 'px'
+//     }, { queue: false, duration: 2500  });
+    
+// }
+
+function moveToSide( obj , pos , distance )
+{
+    $(obj).animate({
+        left:  pos+distance   + 'px'
+    }, { queue: false, duration: 2500  });
+}
+
+var intervals = [];
+
+function swing( obj , pos )
+{
+    var distance = 40;
+    if( parseInt( Math.random() * 2 ) < 1 )
+    {
+        distance *= -1;
+    }
+    console.log(parseInt( Math.random() * 2 ));
+    
+    moveToSide( obj , pos , distance );
+    setTimeout( () => {
+        moveToSide( obj , pos , -distance );;
+    }, 2500 ); 
+    intervals.push( setInterval( function(){ moveToSide( obj , pos , -distance ); } , 5000 ));
+    setTimeout( () => {
+        intervals.push( setInterval( function(){ moveToSide( obj , pos , distance ); }, 5000 ) )
+    }, 2500 );
+    // swing_right( obj , pos );
+    // setTimeout( () => {
+    //     swing_left( obj , pos );
+    // }, 2500 ); 
+    // setInterval( function(){ swing_left( obj , pos ); } , 5000 );
+    // setTimeout( () => {
+    //     setInterval( function(){ swing_right( obj , pos ); }, 5000 )
+    // }, 2500 );  
+
+}
 function difficulty( )
 {
     if( score % 5 == 0 )
@@ -73,6 +130,8 @@ function spawn_enemy( )
 
 
     var obj = document.createElement("img");
+
+    
     
     var nr =  parseInt( Math.random() * ( game1_imgs.length ) );
  
@@ -82,7 +141,9 @@ function spawn_enemy( )
     var img_width =  game1_imgs[nr].width;
     var img_height =  game1_imgs[nr].height;
     
-    var where =  parseInt( Math.random() * ( width - img_width ) );
+    // 40 - swing distance
+
+    var where =  parseInt( Math.random() * ( width - img_width - 40*2) + 40 );
     obj.style = `z-index:10; position: absolute; left: ${where}px; top: ${-img_height}px; width:${img_width}px; height:${img_height}px;`;
     
     obj.draggable = false;
@@ -91,11 +152,10 @@ function spawn_enemy( )
     ///animacja
     obj.setAttribute("onload",`$(this).animate({
         top: ${ height } + 'px'
-    }, ${ object_animation_duration },
-     'linear' ,
+    }, { queue: false,  easing:'linear', duration: ${ object_animation_duration } , complete:
 
-     ///nie klikniety
-     function(){
+    ///nie klikniety
+    function(){
 
         // console.log(this.parentElement);
          if( this.parentElement != null )
@@ -123,7 +183,14 @@ function spawn_enemy( )
 
         
     
-    }); `);
+    } },
+      
+
+     
+);
+    
+    swing( this , ${where} );
+     `);
     
         
 
@@ -157,6 +224,7 @@ function spawn_enemy( )
 function start( )
 {
     spawn = setInterval( 'spawn_enemy();' , spawn_delay ); 
+    //spawn_enemy();
     $('#info').css('display','none');  
 
 }
